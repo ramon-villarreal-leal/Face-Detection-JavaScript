@@ -19,4 +19,11 @@ function startVideo() {
     )
 }
 //call function
-startVideo()
+//
+video.addEventListener('play', () => {
+    setInterval(async () => {
+        const detections = await faceapi.detectAllFaces(video,
+            new faceapi.TinyFaceDetectorOptions()).withFaceLandMarks
+        ()
+    }, 100)
+})
